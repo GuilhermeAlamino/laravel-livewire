@@ -30,8 +30,11 @@ Route::prefix('/')->group(function () {
     Route::get('/{id}/edit', [HomeController::class, 'edit_user_data'])->where('id','[0-9]+')->name('edit-user');
 
     //put update edit user
-    Route::put('/{id}/edit', [HomeController::class, 'update_edit_user_data'])->where('id','[0-9]+')->name('update-edit-user');
+    Route::put('/{id}', [HomeController::class, 'update_edit_user_data'])->where('id','[0-9]+')->name('update-edit-user');
     
+    //delete user
+    Route::delete('/{id}', [HomeController::class, 'delete_user_data'])->where('id','[0-9]+')->name('delete_user');
+
 });
 
 //return of routes undefined

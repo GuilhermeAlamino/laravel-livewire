@@ -41,29 +41,36 @@ class HomeController extends Controller
             return redirect()->route('list-index');
         }
 
-        return view('edit',['user' => $user]);
+        return view('edit', ['user' => $user]);
     }
-    
+
     //view update edit 
-    public function update_edit_user_data(Request $request,$id)
+    public function update_edit_user_data(Request $request, $id)
     {
         $data = [
-            'user_name' =>$request->user_name,
-            'user_cpf' =>$request->user_cpf,
-            'user_rg' =>$request->user_rg,
-            'user_phone' =>$request->user_phone,
-            'user_birthdate' =>$request->user_birthdate,
-            'user_estadocivil' =>$request->user_estadocivil,
-            'cep' =>$request->cep,
-            'address' =>$request->address,
-            'complement' =>$request->complement,
-            'district' =>$request->district,
-            'state' =>$request->state
+            'user_name' => $request->user_name,
+            'user_cpf' => $request->user_cpf,
+            'user_rg' => $request->user_rg,
+            'user_phone' => $request->user_phone,
+            'user_birthdate' => $request->user_birthdate,
+            'user_estadocivil' => $request->user_estadocivil,
+            'cep' => $request->cep,
+            'address' => $request->address,
+            'complement' => $request->complement,
+            'district' => $request->district,
+            'state' => $request->state
         ];
 
-        Tb_list::where('id',$id)->update($data);
+        Tb_list::where('id', $id)->update($data);
 
         return redirect()->route('list-index');
     }
 
+    //view update edit 
+    public function delete_user_data($id)
+    {
+        Tb_list::where('id', $id)->delete();
+
+        return redirect()->route('list-index');
+    }
 }
