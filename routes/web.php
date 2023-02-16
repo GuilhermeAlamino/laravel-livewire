@@ -26,6 +26,12 @@ Route::prefix('/')->group(function () {
     //post create
     Route::post('/user-create', [HomeController::class, 'create_user_data'])->name('create-user');
 
+    //edit user
+    Route::get('/{id}/edit', [HomeController::class, 'edit_user_data'])->where('id','[0-9]+')->name('edit-user');
+
+    //put update edit user
+    Route::put('/{id}/edit', [HomeController::class, 'update_edit_user_data'])->where('id','[0-9]+')->name('update-edit-user');
+    
 });
 
 //return of routes undefined
