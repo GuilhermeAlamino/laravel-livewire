@@ -15,13 +15,20 @@ use App\Http\Controllers\HomeController;
 */
 
 //Create prefix of routes
-Route::prefix('zrsystem')->group(function () {
+Route::prefix('/')->group(function () {
 
-    Route::get('/', [HomeController::class, 'index'])->name('home-index');
+    //view list
+    Route::get('/', [HomeController::class, 'list'])->name('list-index');
+
+    //view create
+    Route::get('/user-create', [HomeController::class, 'users_create'])->name('users-create-list');
+
+    //post create
+    Route::post('/user-create', [HomeController::class, 'create_user_data'])->name('create-user');
 
 });
 
 //return of routes undefined
 Route::fallback(function () {
-    return "Page undefined";
+    return view('not-found');
 });

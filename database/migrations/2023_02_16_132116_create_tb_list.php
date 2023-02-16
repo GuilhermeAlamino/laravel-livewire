@@ -13,7 +13,7 @@ class CreateTbList extends Migration
      */
     public function up()
     {
-        Schema::create('tb_list', function (Blueprint $table) {
+        Schema::create('tb_lists', function (Blueprint $table) {
             $table->id();
             $table->string('user_name')->nullable();
             $table->string('user_cpf')->nullable();
