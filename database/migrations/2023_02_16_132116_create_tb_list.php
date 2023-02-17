@@ -19,7 +19,7 @@ class CreateTbList extends Migration
             $table->string('user_cpf')->nullable();
             $table->string('user_rg')->nullable();
             $table->string('user_phone')->nullable();
-            $table->date('user_birthdate')->nullable();
+            $table->string('user_birthdate')->nullable();
             $table->string('user_estadocivil')->nullable();
             $table->string('cep')->nullable();
             $table->string('address')->nullable();

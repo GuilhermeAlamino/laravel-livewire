@@ -8,8 +8,6 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     //home index
-
-
     public function list()
     {
         $tb_list = Tb_list::all();

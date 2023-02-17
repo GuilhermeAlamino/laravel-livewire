@@ -31,6 +31,11 @@
                                     value="" required>
                             </div>
                             <div class="col-md-4 mb-3">
+                                <label for="user_cpf">RG</label>
+                                <input type="text" class="form-control" id="user_rg" name="user_rg" placeholder="RG"
+                                    value="" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
                                 <label for="user_phone">Telefone</label>
 
                                 <input type="text" class="form-control" id="user_phone" name="user_phone"
