@@ -4,8 +4,7 @@ Uma aplicação web simulando um cadastro de pessoas. As informações necessár
 Regras de negócio
 
 Para este teste será necessário criar um CRUD onde seja possivel (Adicionar, Editar, Listar e Excluir). Os campos cpf, cnpj, identidade(RG) e telefone devem conter as mascaras respectivas. Em endereço o campo cep deve preencher automaticamente os outros campos (Ultilizar API Viacep) https://viacep.com.br Todos os campos são obrigatórios. Criar uma função para validar o cpf. Os campos de telefones devem ser dinâmicos.
-
-Vamos rodar o projeto agora :)
+```
 
 Vá ate o repositorio do projeto 
 ```dosini
