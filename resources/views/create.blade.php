@@ -20,22 +20,22 @@
                             </div>
                         </div>
                         <div class="form-row mt-5">
-                            <div class="col-md-4 mb-3">
+                            <div class="col-md-3 mb-3">
                                 <label for="user_name">Nome</label>
                                 <input type="text" class="form-control" id="user_name" name="user_name"
                                     placeholder="Nome" value="" required>
                             </div>
-                            <div class="col-md-4 mb-3">
+                            <div class="col-md-3 mb-3">
                                 <label for="user_cpf">CPF / CNPJ</label>
                                 <input type="text" class="form-control" id="user_cpf" name="user_cpf" placeholder="CPF"
                                     value="" required>
                             </div>
-                            <div class="col-md-4 mb-3">
+                            <div class="col-md-3 mb-3">
                                 <label for="user_cpf">RG</label>
                                 <input type="text" class="form-control" id="user_rg" name="user_rg" placeholder="RG"
                                     value="" required>
                             </div>
-                            <div class="col-md-4 mb-3">
+                            <div class="col-md-3 mb-3">
                                 <label for="user_phone">Telefone</label>
 
                                 <input type="text" class="form-control" id="user_phone" name="user_phone"
