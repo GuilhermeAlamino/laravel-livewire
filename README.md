@@ -38,6 +38,11 @@ Agora vai precisar usar comandos em seu *terminal* que ele pode ser de sua prefe
 composer create-project laravel/laravel:^8.0 ZrSystem
 ```
 
+Rode o comando para instalar as depêndecias no seu *terminal*.
+```sh
+*Composer install*
+```
+
 Rode o comando para Gerar a key do projeto Laravel ainda no *terminal*.
 ```sh
 php artisan key:generate
