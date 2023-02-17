@@ -1,4 +1,4 @@
-Objetivo de desenvolvimento desse projeto foi 
+Objetivo de desenvolvimento desse projeto foi :<br /> 
 Uma aplicação web simulando um cadastro de pessoas. As informações necessárias para o cadastro serão -> DADOS PESSOAIS -> nome, cpf ou cnpj, identidade(RG), data de nascimento, estado civil. ENDEREÇO -> cep, rua, estado, bairro, complemento. TELEFONES -> tipo(cel ou fixo), numero com dd.
 
 Regras de negócio
