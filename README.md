@@ -29,7 +29,7 @@ DB_HOST=mysql
 DB_PORT=3306
 DB_DATABASE=zrsystem
 DB_USERNAME=root
-DB_PASSWORD=root
+DB_PASSWORD=
 ```
 
 Certifique se que tenha composer instalado, se não tiver baixe, pode executar no terminal o comando para verificar -> *composer -v*.
