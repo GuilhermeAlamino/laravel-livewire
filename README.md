@@ -42,7 +42,7 @@ Certifique se que tenha composer instalado, se não tiver baixe, pode executar n
 https://getcomposer.org/Composer-Setup.exe
 ```
 
-Agora vai precisar usar comandos em seu *terminal* que ele pode ser de sua preferencia, caminhe até dentro da pasta criara *ZrSystem/ZrSystem*, após isso rode o comando no *terminal*.
+Agora vai precisar usar comandos em seu *terminal* que ele pode ser de sua preferencia, caminhe até dentro da pasta criara *ZrSystem*, após isso rode o comando no *terminal*.
 ```sh
 composer create-project laravel/laravel:^8.0 ZrSystem
 ```
