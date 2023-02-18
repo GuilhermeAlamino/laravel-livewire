@@ -3,20 +3,20 @@
 @section('title', 'Lista')
 
 @section('content')
-    <div class="row p-0 m-0">
-        <div class="col-12 d-flex justify-content-center">
-            <div class="form-list-index">
 
-                <div class="container mt-5">
+    <div class="container-style mt-5">
 
-                    <div class="row mb-5 d-flex align-items-center">
-                        <div class="col-6">
-                            <h1>Lista de Usuários</h1>
-                        </div>
-                        <div class="col-6 d-flex justify-content-end">
-                            <a href="{{ route('users-create-list') }}" class="btn btn-success">Criar Usuário</a>
-                        </div>
-                    </div>
+        <div class="row mb-5 d-flex align-items-center">
+            <div class="col-6 pt-5 pl-5">
+                <h1>Lista de Usuários</h1>
+            </div>
+            <div class="col-6 pt-5 pr-5 d-flex justify-content-end">
+                <a href="{{ route('users-create-list') }}" class="btn btn-success">Criar Usuário</a>
+            </div>
+
+            <div class="row">
+                <div class="container-style">
+
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -32,7 +32,7 @@
                                 <th scope="col">Complemento</th>
                                 <th scope="col">Bairro</th>
                                 <th scope="col">Estado</th>
-                                <th colspan="2">Editar</th>
+                                <th style="text-align: center;" colspan="2">Editar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -79,8 +79,10 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
 
+            </div>
         </div>
+
+
     </div>
 @endsection

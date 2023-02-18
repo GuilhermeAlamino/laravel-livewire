@@ -140,6 +140,26 @@
         }
 
         /* not found */
+
+        /* message */
+        #message-not-location,
+        #message-invalid,
+        #message-success {
+            display: none;
+        }
+
+        /* message */
+
+        /* table */
+        .container-style {
+            border: 1px solid;
+            border-color: lavender;
+            display: flex;
+            margin: 40px;
+            border-radius: 10px;
+        }
+
+        /* table */
     </style>
 </head>
 
@@ -157,8 +177,7 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
-    <script src="{{ config('app.url') }}/{{ config('app.name') }}/{{ config('app.name') }}/resources/js/functions.js">
-    </script>
+    <script src="{{ config('app.url') }}/{{ config('app.name') }}/resources/js/functions.js"></script>
 
 
     <div class="container mt-5">
@@ -181,7 +200,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row p-0 m-0">
                     <div class="col-12">
                         <div id="message-success" class="alert alert-success" role="alert">
