@@ -20,6 +20,11 @@ Se quiser clonar via terminal pode abrir o seu *terminal*, e caminhar até a pas
 
 Agora abre seu editor, vá até a pasta que normalmente seria *ZrSystem*, e atualize as variáveis de ambiente do arquivo (*ZrSystem/.env*) *(Obs: pode seguir as *Configurações* da maneira que está sendo feita aqui :)*)
 
+
+```sh
+Não esqueça de criar o seu Banco de dados, com o nome que vai ficar na variavel de ambiente DB_DATABASE; 
+```
+
 ```dosini
 APP_NAME="ZrSystem"
 APP_URL=http://localhost:8080
