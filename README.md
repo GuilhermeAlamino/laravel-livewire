@@ -10,13 +10,9 @@ Vá ate o repositorio do projeto
 https://github.com/GuilhermeAlamino/ZrSystem
 ```
 
-```dosini
 Caminhe até a sua pasta "htdocs" se estiver usando o *xampp* se não, pode ir até a pasta do seu *Ambiente de desenvolvimento* e crie uma pasta chamada *ZrSystem*.
-```
 
-```dosini
 Se quiser clonar via terminal pode abrir o seu *terminal*, e caminhar até a pasta do seu *Ambiente de desenvolvimento* e entrar na pasta criada chamada *Zrsystem* e executar *git clone https://github.com/GuilhermeAlamino/ZrSystem.git* 
-```
 
 Agora abre seu editor, vá até a pasta que normalmente seria *ZrSystem/ZrSystem*, e atualize as variáveis de ambiente do arquivo (*ZrSystem/.env*) *(Obs: pode seguir as *Configurações* da maneira que está sendo feita aqui :)*)
 
