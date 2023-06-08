@@ -1,3 +1,5 @@
+require('./bootstrap');
+
 $(document).ready(function () {
   $('#message-invalid').hide();
   $('#message-not-location').hide();
