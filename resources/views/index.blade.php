@@ -7,14 +7,22 @@
     <div class="container-style mt-5">
 
         <div class="row mb-5 d-flex align-items-center">
-            <div class="col-6 pt-5 pl-5">
+            <div class="col-12 py-3 px-5">
+                @if (session('success'))
+                    <div class="col-12 alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+            </div>
+
+            <div class="col-6 px-5">
                 <h1>Lista de Usuários</h1>
             </div>
-            <div class="col-6 pt-5 pr-5 d-flex justify-content-end">
+            <div class="col-6 px-5 d-flex justify-content-end">
                 <a href="{{ route('users-create-list') }}" class="btn btn-success">Criar Usuário</a>
             </div>
 
-            <div class="row">
+            <div class="col-12 px-4">
                 <div class="container-style">
 
                     <table class="table table-hover">

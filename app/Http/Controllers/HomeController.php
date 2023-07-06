@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\create_user_data;
 use App\Models\Tb_list;
 use Illuminate\Http\Request;
 
@@ -21,12 +22,11 @@ class HomeController extends Controller
     }
 
     //view create post
-    public function create_user_data(Request $request)
+    public function create_user_data(create_user_data $request)
     {
+        Tb_list::create($request->validated());
 
-        Tb_list::create($request->all());
-
-        return redirect()->route('list-index');
+        return redirect()->route('users-create-list')->with('success', 'Registro criado com sucesso!');
     }
 
     //view edit 
@@ -61,7 +61,7 @@ class HomeController extends Controller
 
         Tb_list::where('id', $id)->update($data);
 
-        return redirect()->route('list-index');
+        return redirect()->route('edit-user', ['id' => $id])->with('success', 'Registro atualizado com sucesso!');
     }
 
     //view update edit 
@@ -69,6 +69,6 @@ class HomeController extends Controller
     {
         Tb_list::where('id', $id)->delete();
 
-        return redirect()->route('list-index');
+        return redirect()->route('list-index')->with('success', 'Registro deletado com sucesso!');
     }
 }
