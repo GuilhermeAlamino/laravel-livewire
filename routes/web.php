@@ -20,20 +20,14 @@ Route::prefix('/')->group(function () {
     //view list
     Route::get('/', [HomeController::class, 'list'])->name('list-index');
 
-    //view create
-    Route::get('/user-create', [HomeController::class, 'users_create'])->name('users-create-list');
-
     //post create
-    Route::post('/user-create', [HomeController::class, 'create_user_data'])->name('create-user');
-
-    //edit user
-    Route::get('/{id}/edit', [HomeController::class, 'edit_user_data'])->where('id','[0-9]+')->name('edit-user');
+    Route::post('/user-create', [HomeController::class, 'store'])->name('create-user');
 
     //put update edit user
-    Route::put('/{id}', [HomeController::class, 'update_edit_user_data'])->where('id','[0-9]+')->name('update-edit-user');
+    Route::put('/{id}', [HomeController::class, 'update'])->where('id','[0-9]+')->name('update-edit-user');
     
     //delete user
-    Route::delete('/{id}', [HomeController::class, 'delete_user_data'])->where('id','[0-9]+')->name('delete_user');
+    Route::delete('/{id}', [HomeController::class, 'delete'])->where('id','[0-9]+')->name('delete_user');
 
 });
 

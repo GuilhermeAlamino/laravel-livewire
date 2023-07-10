@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\create_user_data;
+use App\Http\Requests\ValidationStore;
 use App\Models\Tb_list;
 use Illuminate\Http\Request;
 
@@ -12,38 +12,20 @@ class HomeController extends Controller
     public function list()
     {
         $tb_list = Tb_list::all();
+
         return view('index', ['lists' => $tb_list]);
     }
 
-    //view create
-    public function users_create()
-    {
-        return view('create');
-    }
-
     //view create post
-    public function create_user_data(create_user_data $request)
+    public function store(ValidationStore $request)
     {
         Tb_list::create($request->validated());
 
-        return redirect()->route('users-create-list')->with('success', 'Registro criado com sucesso!');
-    }
-
-    //view edit 
-    public function edit_user_data($id)
-    {
-
-        $user = Tb_list::where('id', $id)->first();
-
-        if (empty($user)) {
-            return redirect()->route('list-index');
-        }
-
-        return view('edit', ['user' => $user]);
+        return redirect()->route('list-index')->with('success', ['message' => 'Registro criado com sucesso!', 'class' => 'alert alert-success']);
     }
 
     //view update edit 
-    public function update_edit_user_data(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $data = [
             'user_name' => $request->user_name,
@@ -58,17 +40,17 @@ class HomeController extends Controller
             'district' => $request->district,
             'state' => $request->state
         ];
-
+        
         Tb_list::where('id', $id)->update($data);
 
-        return redirect()->route('edit-user', ['id' => $id])->with('success', 'Registro atualizado com sucesso!');
+        return redirect()->route('list-index', ['id' => $id])->with('success', ['message' => 'Registro atualizado com sucesso!', 'class' => 'alert alert-success']);
     }
 
     //view update edit 
-    public function delete_user_data($id)
+    public function delete($id)
     {
         Tb_list::where('id', $id)->delete();
 
-        return redirect()->route('list-index')->with('success', 'Registro deletado com sucesso!');
+        return redirect()->route('list-index')->with('success', ['message' => 'Registro deletado com sucesso!', 'class' => 'alert alert-danger']);
     }
 }

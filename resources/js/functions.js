@@ -1,89 +1,9 @@
 require('./bootstrap');
 
 $(document).ready(function () {
-  $('#message-invalid').hide();
-  $('#message-not-location').hide();
-  $('#message-success').hide();
-
-  function clear_form() {
-    // Limpa valores do formulário de cep.
-    $("#address").val("");
-    $("#complement").val("");
-    $("#district").val("");
-    $("#state").val("");
-  }
-
-  //Quando o campo cep perde o foco.
-  $("#cep").blur(function () {
-
-    //Nova variável "cep" somente com dígitos.
-    var cep = $(this).val().replace(/\D/g, '');
-
-    //Verifica se campo cep possui valor informado.
-    if (cep != "") {
-
-      //Expressão regular para validar o CEP.
-      var validateCep = /^[0-9]{8}$/;
-
-      //Valida o formato do CEP.
-      if (validateCep.test(cep)) {
-
-        //Preenche os campos com "..." enquanto consulta webservice.
-        $("#address").val("");
-        $("#complement").val("");
-        $("#district").val("");
-        $("#state").val("");
-
-        //Consulta o webservice viacep.com.br/
-        $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
-
-          if (!("erro" in dados)) {
-            //Atualiza os campos com os valores da consulta.
-            $("#address").val(dados.logradouro);
-            $("#complement").val(dados.complemento);
-            $("#district").val(dados.bairro);
-            $("#state").val(dados.localidade);
-            $('#message-invalid').hide();
-            $('#message-not-location').hide();
-            setTimeout(function () {
-              $('#message-success').fadeIn();
-            }, 1000);
-          } //end if.
-          else {
-            //CEP pesquisado não foi encontrado.
-            clear_form();
-            $('#message-success').hide();
-            $('#message-invalid').hide();
-
-            setTimeout(function () {
-              $('#message-not-location').fadeIn();
-            }, 1000);
-
-          }
-        });
-      } //end if.
-      else {
-        //cep é inválido.
-        clear_form();
-        $('#message-success').hide();
-        $('#message-not-location').hide();
-
-        setTimeout(function () {
-          $('#message-invalid').fadeIn('slow');
-        }, 1000);
-      }
-    } //end if.
-    else {
-      //cep sem valor, limpa formulário.
-      clear_form();
-      $('#message-invalid').hide();
-      $('#message-not-location').hide();
-      $('#message-success').hide();
-    }
-  });
+  // mascara e tratamentos de input
 
   //mask in cep
-
   $("#cep").mask("99999-999");
 
   //mask and validate in cpf or cnpj
@@ -96,6 +16,7 @@ $(document).ready(function () {
   }
 
   $('#user_cpf').length > 11 ? $('#user_cpf').mask('00.000.000/0000-00', options) : $('#user_cpf').mask('000.000.000-00#', options);
+  //mask in cof or cnpj 
 
   //mask in rg
 
@@ -135,4 +56,11 @@ $(document).ready(function () {
   };
 
   $('#user_birthdate').mask('00/00/0000', options);
+  // mascara e tratamentos de input
+
+  $('#loading').fadeOut();
+  $('#message-invalid').hide();
+  $('#message-not-location').hide();
+  $('#message-success').hide();
+
 });
