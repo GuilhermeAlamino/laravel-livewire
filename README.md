@@ -10,12 +10,15 @@ Vá ate o repositorio do projeto
 https://github.com/GuilhermeAlamino/laravel-livewire
 ```
 
-Caminhe até a sua pasta "htdocs" se estiver usando o *xampp* se não, pode ir até a pasta do seu *Ambiente de desenvolvimento* e crie uma pasta chamada *laravel-livewire*.
-
-Se quiser clonar via terminal pode abrir o seu *terminal*, e caminhar até a pasta do seu *Ambiente de desenvolvimento* e entrar na pasta criada chamada *laravel-livewire* e executar 
+Utilize o terminal e vá até a sua pasta "htdocs" se estiver usando o *xampp* se não, pode ir até a pasta do seu *Ambiente de desenvolvimento* e Execute o comando abaixo:
 
 ```sh
 *git clone https://github.com/GuilhermeAlamino/laravel-livewire.git* 
+```
+Ou usando a interface do Git-Hub :
+
+```sh
+Se quiser baixar a paste, e colar no seu ambiente de desenvolvimento também ira funcionar.
 ```
 
 Agora abre seu editor, vá até a pasta que normalmente seria *laravel-livewire*, e atualize as variáveis de ambiente do arquivo (*laravel-livewire/.env*) *(Obs: pode seguir as *Configurações* da maneira que está sendo feita aqui :)*)
@@ -42,17 +45,17 @@ Certifique se que tenha composer instalado, se não tiver baixe, pode executar n
 https://getcomposer.org/Composer-Setup.exe
 ```
 
-Agora vai precisar usar comandos em seu *terminal* que ele pode ser de sua preferencia, caminhe até dentro da pasta criara *laravel-livewire*, após isso rode o comando no *terminal*, *Rode o comando para instalar as depêndecias no seu *terminal*.
+Agora vai precisar usar comandos em seu *terminal* que ele pode ser de sua preferencia, caminhe até dentro da pasta criara *laravel-livewire*, após isso rode o comando no *terminal*, *Rode o comando para instalar as dependências no seu *terminal*.
 ```sh
 *Composer install*
 ```
 
-Rode o comando para Gerar a key do projeto Laravel ainda no *terminal*.
+Rode o comando para Gerar a key do projeto ainda no *terminal*.
 ```sh
 php artisan key:generate
 ```
 
-Execute a migrate para carregar a Estrutura do Banco de dados.
+Execute a migrate para executar as migrações do Banco de dados.
 ```sh
 php artisan migrate
 ```
