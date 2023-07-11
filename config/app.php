@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'ZrSystem'),
+    'name' => env('APP_NAME', 'laravel-livewire'),
 
     /*
     |--------------------------------------------------------------------------
