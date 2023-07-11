@@ -1,4 +1,4 @@
-Objetivo de desenvolvimento desse projeto foi Implementar LiveWire para validação de input dentro de modal entre outras Libs complementares como Alpine Js e criar Compononentes , e claro, entendo como o LiveWire funciona com as request ;)<br /> <br /> 
+Objetivo de desenvolvimento desse projeto foi Implementar LiveWire para validação de input dentro de modal entre outras Libs complementares como Alpine Js e criar Componentes , e claro entender como o LiveWire trata as view e request ;)<br /> <br /> 
 Uma aplicação web simulando um cadastro de pessoas. As informações necessárias para o cadastro serão -> DADOS PESSOAIS -> nome, cpf ou cnpj, identidade(RG), data de nascimento, estado civil. ENDEREÇO -> cep, rua, estado, bairro, complemento. TELEFONES -> tipo(cel ou fixo), numero com dd.
 
 Regras de negócio
