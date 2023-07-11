@@ -2098,25 +2098,20 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 $(document).ready(function () {
-  // mascara e tratamentos de input
-
   //mask in cep
-  $("#cep").mask("99999-999");
-
-  //mask and validate in cpf or cnpj
-
+  $(".cep").mask("99999-999");
   var options = {
     onKeyPress: function onKeyPress(cpf, ev, el, op) {
       var masks = ['000.000.000-000', '00.000.000/0000-00'];
-      $('#user_cpf').mask(cpf.length > 14 ? masks[1] : masks[0], op);
+      $('.user_cpf').mask(cpf.length > 14 ? masks[1] : masks[0], op);
     }
   };
-  $('#user_cpf').length > 11 ? $('#user_cpf').mask('00.000.000/0000-00', options) : $('#user_cpf').mask('000.000.000-00#', options);
+  $('.user_cpf').length > 11 ? $('.user_cpf').mask('00.000.000/0000-00', options) : $('.user_cpf').mask('000.000.000-00#', options);
   //mask in cof or cnpj 
 
   //mask in rg
 
-  $('#user_rg').mask('99.999.999-9'); // Máscara para RG<br/>
+  $('.user_rg').mask('99.999.999-9'); // Máscara para RG<br/>
 
   //mask and validate in phone
 
@@ -2128,7 +2123,7 @@ $(document).ready(function () {
         field.mask(SPMaskBehavior.apply({}, arguments), options);
       }
     };
-  $('#user_phone').mask(SPMaskBehavior, spOptions);
+  $('.user_phone').mask(SPMaskBehavior, spOptions);
 
   //mask and validate in birthdate
 
@@ -2138,20 +2133,17 @@ $(document).ready(function () {
       var dia = data.split('/')[0],
         mes = data.split('/')[1];
       if (data.length >= 2) {
-        if (dia > 31) $('#user_birthdate').val('31/');
+        if (dia > 31) $('.user_birthdate').val('31/');
       }
       if (data.length >= 5) {
-        if (mes > 12) $('#user_birthdate').val(dia + '/12/');
+        if (mes > 12) $('.user_birthdate').val(dia + '/12/');
       }
     }
   };
-  $('#user_birthdate').mask('00/00/0000', options);
+  $('.user_birthdate').mask('00/00/0000', options);
   // mascara e tratamentos de input
 
   $('#loading').fadeOut();
-  $('#message-invalid').hide();
-  $('#message-not-location').hide();
-  $('#message-success').hide();
 });
 
 /***/ }),

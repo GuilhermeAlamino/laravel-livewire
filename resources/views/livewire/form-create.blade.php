@@ -28,8 +28,8 @@
             </div>
             <div class="form-group">
                 <label>RG</label>
-                <input type="text" class="form-control user_rg @error('user_rg') is-invalid @enderror" wire:model="user_rg"
-                    id="user_rg" value="{{ old('user_rg') }}">
+                <input type="text" class="form-control user_rg @error('user_rg') is-invalid @enderror"
+                    wire:model="user_rg" id="user_rg" value="{{ old('user_rg') }}">
                 @error('user_rg')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -70,8 +70,8 @@
         @elseif($currentStep === 2)
             <div class="form-group">
                 <label>CEP</label>
-                <input type="text" class="form-control cep @error('cep') is-invalid @enderror"
-                    wire:model.lazy="cep" id="cep" value="{{ old('cep') }}">
+                <input type="text" class="form-control cep @error('cep') is-invalid @enderror" wire:model.lazy="cep"
+                    id="cep" value="{{ old('cep') }}">
                 @error('cep')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -81,7 +81,7 @@
             <div class="form-group">
                 <label>Endereço</label>
                 <input type="text" class="form-control address @error('address') is-invalid @enderror"
-                    wire:model.defer="address" id="address" value="{{ old('address') }}">
+                    wire:model="address" id="address" value="{{ old('address') }}">
                 @error('address')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -91,7 +91,7 @@
             <div class="form-group">
                 <label>Complemento</label>
                 <input type="text" class="form-control complement @error('complement') is-invalid @enderror"
-                    wire:model.defer="complement" id="complement" value="{{ old('complement') }}">
+                    wire:model="complement" id="complement" value="{{ old('complement') }}">
                 @error('complement')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -101,7 +101,7 @@
             <div class="form-group">
                 <label>Bairro</label>
                 <input type="text" class="form-control district @error('district') is-invalid @enderror"
-                    wire:model.defer="district" id="district" value="{{ old('district') }}">
+                    wire:model="district" id="district" value="{{ old('district') }}">
                 @error('district')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -111,7 +111,7 @@
             <div class="form-group">
                 <label>Estado</label>
                 <input type="text" class="form-control state @error('state') is-invalid @enderror"
-                    wire:model.defer="state" id="state" value="{{ old('state') }}">
+                    wire:model="state" id="state" value="{{ old('state') }}">
                 @error('state')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -128,6 +128,73 @@
         @if ($currentStep < 2)
             <button class="next" wire:click="nextStep">Próximo</button>
         @endif
+
+        <script>
+            function renderCodeBlock() {
+                //mask in cep
+                $(".cep").mask("99999-999");
+
+                //mask and validate in cpf or cnpj
+                var options = {
+                    onKeyPress: function(cpf, ev, el, op) {
+                        var masks = ['000.000.000-000', '00.000.000/0000-00'];
+                        $('.user_cpf').mask((cpf.length > 14) ? masks[1] : masks[0], op);
+                    }
+                }
+
+                $('.user_cpf').length > 11 ? $('.user_cpf').mask('00.000.000/0000-00', options) : $('.user_cpf').mask(
+                    '000.000.000-00#', options);
+
+                //mask in cof or cnpj 
+
+                //mask in rg
+                $('.user_rg').mask('99.999.999-9');
+
+                //mask and validate in phone
+                var SPMaskBehavior = function(val) {
+                    return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+                };
+
+                var spOptions = {
+                    onKeyPress: function(val, e, field, options) {
+                        field.mask(SPMaskBehavior.apply({}, arguments), options);
+                    }
+                };
+
+                $('.user_phone').mask(SPMaskBehavior, spOptions);
+
+                //mask and validate in birthdate
+                var optionsBirthdate = {
+                    onKeyPress: function(data, e, field, options) {
+                        var dia = data.split('/')[0],
+                            mes = data.split('/')[1];
+
+                        if (data.length >= 2) {
+                            if (dia > 31) $('.user_birthdate').val('31/');
+                        }
+
+                        if (data.length >= 5) {
+                            if (mes > 12) $('.user_birthdate').val(dia + '/12/');
+                        }
+                    }
+                };
+
+                $('.user_birthdate').mask('00/00/0000', optionsBirthdate);
+
+                // mascara e tratamentos de input
+            }
+
+            $(".previous").click(function() {
+                renderCodeBlock();
+            });
+
+            $(".next").click(function() {
+                renderCodeBlock();
+            });
+
+            // Initial render
+            renderCodeBlock();
+        </script>
     </div>
 
     <div class="modal-footer">

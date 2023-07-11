@@ -483,6 +483,7 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
     <script src="{{ mix('/js/functions.js') }}"></script>
+    @livewireScripts
 </body>
 
 </html>
