@@ -1,24 +1,24 @@
-Objetivo de desenvolvimento desse projeto foi :<br /> <br /> 
+Objetivo de desenvolvimento desse projeto foi Implementar LiveWire para validação de input dentro de modal entre outras Libs complementares como Alpine Js e criar Compononentes , e claro, entendo como o LiveWire funciona com as request ;)<br /> <br /> 
 Uma aplicação web simulando um cadastro de pessoas. As informações necessárias para o cadastro serão -> DADOS PESSOAIS -> nome, cpf ou cnpj, identidade(RG), data de nascimento, estado civil. ENDEREÇO -> cep, rua, estado, bairro, complemento. TELEFONES -> tipo(cel ou fixo), numero com dd.
 
 Regras de negócio
 
-Para este teste será necessário criar um CRUD onde seja possivel (Adicionar, Editar, Listar e Excluir). Os campos cpf, cnpj, identidade(RG) e telefone devem conter as mascaras respectivas. Em endereço o campo cep deve preencher automaticamente os outros campos (Ultilizar API Viacep) https://viacep.com.br Todos os campos são obrigatórios. Criar uma função para validar o cpf. Os campos de telefones devem ser dinâmicos.
+Para este teste foi necessário criar um CRUD onde seja possivel (Adicionar, Editar, Listar e Excluir). Os campos cpf, cnpj, identidade(RG) e telefone devem conter as mascaras respectivas. Em endereço o campo cep deve preencher automaticamente os outros campos (Ultilizar API Viacep) https://viacep.com.br Todos os campos são obrigatórios. Criar uma função para validar o cpf. Os campos de telefones devem ser dinâmicos.
 
 Vá ate o repositorio do projeto 
 ```dosini
-https://github.com/GuilhermeAlamino/ZrSystem
+https://github.com/GuilhermeAlamino/laravel-livewire
 ```
 
-Caminhe até a sua pasta "htdocs" se estiver usando o *xampp* se não, pode ir até a pasta do seu *Ambiente de desenvolvimento* e crie uma pasta chamada *ZrSystem*.
+Caminhe até a sua pasta "htdocs" se estiver usando o *xampp* se não, pode ir até a pasta do seu *Ambiente de desenvolvimento* e crie uma pasta chamada *laravel-livewire*.
 
-Se quiser clonar via terminal pode abrir o seu *terminal*, e caminhar até a pasta do seu *Ambiente de desenvolvimento* e entrar na pasta criada chamada *Zrsystem* e executar 
+Se quiser clonar via terminal pode abrir o seu *terminal*, e caminhar até a pasta do seu *Ambiente de desenvolvimento* e entrar na pasta criada chamada *laravel-livewire* e executar 
 
 ```sh
-*git clone https://github.com/GuilhermeAlamino/ZrSystem.git* 
+*git clone https://github.com/GuilhermeAlamino/laravel-livewire.git* 
 ```
 
-Agora abre seu editor, vá até a pasta que normalmente seria *ZrSystem*, e atualize as variáveis de ambiente do arquivo (*ZrSystem/.env*) *(Obs: pode seguir as *Configurações* da maneira que está sendo feita aqui :)*)
+Agora abre seu editor, vá até a pasta que normalmente seria *laravel-livewire*, e atualize as variáveis de ambiente do arquivo (*laravel-livewire/.env*) *(Obs: pode seguir as *Configurações* da maneira que está sendo feita aqui :)*)
 
 
 ```sh
@@ -26,13 +26,13 @@ Não esqueça de criar o seu Banco de dados, com o nome que vai ficar na variave
 ```
 
 ```dosini
-APP_NAME="ZrSystem"
+APP_NAME="laravel-livewire"
 APP_URL=http://localhost:8080
 
 DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
-DB_DATABASE=zrsystem
+DB_DATABASE=laravel-livewire
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -42,7 +42,7 @@ Certifique se que tenha composer instalado, se não tiver baixe, pode executar n
 https://getcomposer.org/Composer-Setup.exe
 ```
 
-Agora vai precisar usar comandos em seu *terminal* que ele pode ser de sua preferencia, caminhe até dentro da pasta criara *ZrSystem*, após isso rode o comando no *terminal*, *Rode o comando para instalar as depêndecias no seu *terminal*.
+Agora vai precisar usar comandos em seu *terminal* que ele pode ser de sua preferencia, caminhe até dentro da pasta criara *laravel-livewire*, após isso rode o comando no *terminal*, *Rode o comando para instalar as depêndecias no seu *terminal*.
 ```sh
 *Composer install*
 ```
