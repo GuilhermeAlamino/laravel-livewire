@@ -70,8 +70,8 @@
         @elseif($currentStep === 2)
             <div class="form-group">
                 <label>CEP</label>
-                <input type="text" class="form-control cep @error('cep') is-invalid @enderror" wire:model.lazy="cep"
-                    id="cep" value="{{ old('cep') }}">
+                <input type="text" class="form-control cep @error('cep') is-invalid @enderror"
+                    wire:model.lazy="cep" id="cep" value="{{ old('cep') }}">
                 @error('cep')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -129,6 +129,14 @@
             <button class="next" wire:click="nextStep">Próximo</button>
         @endif
 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
         <script>
             function renderCodeBlock() {
                 //mask in cep

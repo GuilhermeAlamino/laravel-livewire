@@ -464,6 +464,7 @@
             margin-bottom: 0px !important;
         }
     </style>
+    @livewireStyles
 </head>
 
 <body>
